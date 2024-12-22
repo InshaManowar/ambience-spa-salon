@@ -3,8 +3,16 @@ import { Link } from 'react-router-dom';
 import { MapPinIcon, PhoneIcon, EnvelopeIcon, ClockIcon } from '@heroicons/react/24/outline';
 
 const Footer = () => {
+  const handleLinkClick = () => {
+    // Smooth scroll to top for all navigation links
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // Google Maps URL with the encoded address
+  const mapUrl = "https://www.google.com/maps/place/540+S+Mendenhall+Rd+%238,+Memphis,+TN+38117,+USA";
+
   return (
-    <footer className="bg-custom-black text-beige-light relative">
+    <footer className="bg-custom-red text-beige-light relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div>
@@ -33,18 +41,33 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start">
                 <MapPinIcon className="h-6 w-6 text-beige-DEFAULT mr-3 flex-shrink-0" />
-                <span className="text-beige-light/80">
+                <a 
+                  href={mapUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-beige-light/80 hover:text-beige-light transition-colors"
+                >
                   540 SOUTH MENDENHALL RD, #8<br />
                   MEMPHIS, TN, 38117
-                </span>
+                </a>
               </li>
               <li className="flex items-center">
                 <PhoneIcon className="h-5 w-5 text-beige-DEFAULT mr-3" />
-                <span className="text-beige-light/80">(555) 123-4567</span>
+                <a 
+                  href="tel:5551234567" 
+                  className="text-beige-light/80 hover:text-beige-light transition-colors"
+                >
+                  (555) 123-4567
+                </a>
               </li>
               <li className="flex items-center">
                 <EnvelopeIcon className="h-5 w-5 text-beige-DEFAULT mr-3" />
-                <span className="text-beige-light/80">info@ambiencesalon.com</span>
+                <a 
+                  href="mailto:info@ambiencesalon.com"
+                  className="text-beige-light/80 hover:text-beige-light transition-colors"
+                >
+                  info@ambiencesalon.com
+                </a>
               </li>
             </ul>
           </div>
@@ -67,17 +90,29 @@ const Footer = () => {
             <h4 className="text-xl font-serif mb-6">Quick Links</h4>
             <ul className="space-y-3">
               <li>
-                <Link to="/" className="text-beige-light/80 hover:text-beige-light transition-colors">
+                <Link 
+                  to="/" 
+                  className="text-beige-light/80 hover:text-beige-light transition-colors"
+                  onClick={handleLinkClick}
+                >
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-beige-light/80 hover:text-beige-light transition-colors">
+                <Link 
+                  to="/services" 
+                  className="text-beige-light/80 hover:text-beige-light transition-colors"
+                  onClick={handleLinkClick}
+                >
                   Services
                 </Link>
               </li>
               <li>
-                <Link to="/#contact" className="text-beige-light/80 hover:text-beige-light transition-colors">
+                <Link 
+                  to="/book" 
+                  className="text-beige-light/80 hover:text-beige-light transition-colors"
+                  onClick={handleLinkClick}
+                >
                   Book Appointment
                 </Link>
               </li>

@@ -30,7 +30,7 @@ const Introduction = () => {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="text-beige-dark uppercase tracking-widest text-sm mb-2"
           >
-            THE
+          
           </motion.p>
 
           <motion.h2
@@ -39,7 +39,7 @@ const Introduction = () => {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="text-5xl md:text-7xl font-serif text-custom-black mb-6"
           >
-            AMBIENCE SALON AND SPA
+            The Art of Relaxation and Radiance
           </motion.h2>
 
           <motion.div
@@ -55,7 +55,7 @@ const Introduction = () => {
             transition={{ delay: 0.8, duration: 0.8 }}
             className="text-lg md:text-xl text-custom-black/80 leading-relaxed mb-32"
           >
-            is a full-service salon located in Memphis, Tennessee. 
+            Ambience is a full-service salon located in Memphis, Tennessee. 
             It is here that we welcome you to familiarize yourself with our team 
             of artists and the extensive services we offer. Experience the pinnacle 
             of beauty and wellness in our luxurious setting.
@@ -77,18 +77,18 @@ const Introduction = () => {
             <div className="relative md:order-2 order-1 mb-8 md:mb-0">
               <div className="aspect-[3/4] overflow-hidden rounded-sm border border-beige-DEFAULT/10 shadow-2xl">
                 <img
-                  src="https://images.pexels.com/photos/1367269/pexels-photo-1367269.jpeg"
+                  src="https://i.ibb.co/Xpg1GFW/7.png"
                   alt="Sandy & Sachi"
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute -bottom-12 -right-12 w-64 h-64 overflow-hidden rounded-sm border border-beige-DEFAULT/10 shadow-2xl">
+              {/* <div className="absolute -bottom-12 -right-12 w-64 h-64 overflow-hidden rounded-sm border border-beige-DEFAULT/10 shadow-2xl">
                 <img
-                  src="https://images.pexels.com/photos/3993324/pexels-photo-3993324.jpeg"
+                  src="https://i.ibb.co/K2qqfGN/8.png"
                   alt="Working"
                   className="w-full h-full object-cover"
                 />
-              </div>
+              </div> */}
               <div className="absolute -left-4 -top-4 w-24 h-24 border-t border-l border-beige-DEFAULT/10"></div>
               <div className="absolute -right-4 -bottom-4 w-24 h-24 border-b border-r border-beige-DEFAULT/10"></div>
             </div>

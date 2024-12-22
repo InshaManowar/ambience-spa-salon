@@ -15,11 +15,12 @@ export default {
         custom: {
           black: '#1A1A1A',
           gray: '#333333',
+          red:'#6e0436'
         },
         beige: {
-          light: '#F5F0EB',
-          DEFAULT: '#C4A484',
-          dark: '#8B7355',
+          light: '#faf5f7',
+          DEFAULT: '#f5b3cd',
+          dark: '#c2024e',
         },
         navy: {
           DEFAULT: '#0A192F',
