@@ -8,8 +8,9 @@ const Footer = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // Google Maps URL with the encoded address
+  // URLs
   const mapUrl = "https://www.google.com/maps/place/540+S+Mendenhall+Rd+%238,+Memphis,+TN+38117,+USA";
+  const privacyPolicyUrl = "https://www.freeprivacypolicy.com/live/f7ad288c-19c2-4f14-80fa-a92643b5ada7";
 
   return (
     <footer className="bg-custom-red text-beige-light relative">
@@ -109,12 +110,22 @@ const Footer = () => {
               </li>
               <li>
                 <Link 
-                  to="/book" 
+                  to="/#contact" 
                   className="text-beige-light/80 hover:text-beige-light transition-colors"
                   onClick={handleLinkClick}
                 >
                   Book Appointment
                 </Link>
+              </li>
+              <li>
+                <a 
+                  href={privacyPolicyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-beige-light/80 hover:text-beige-light transition-colors"
+                >
+                  Privacy Policy
+                </a>
               </li>
             </ul>
           </div>
