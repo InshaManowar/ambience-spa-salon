@@ -110,7 +110,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link 
-                  to="/#contact" 
+                  to="/book" 
                   className="text-beige-light/80 hover:text-beige-light transition-colors"
                   onClick={handleLinkClick}
                 >
