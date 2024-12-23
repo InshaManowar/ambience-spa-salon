@@ -64,7 +64,7 @@ const Footer = () => {
               <li className="flex items-center">
                 <EnvelopeIcon className="h-5 w-5 text-beige-DEFAULT mr-3" />
                 <a 
-                  href="mailto:info@ambiencesalon.com"
+                  href="ambience.salon.spa2025@gmail.com"
                   className="text-beige-light/80 hover:text-beige-light transition-colors"
                 >
                   ambience.salon.spa2025@gmail.com
