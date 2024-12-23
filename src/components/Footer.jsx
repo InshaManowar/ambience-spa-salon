@@ -67,7 +67,7 @@ const Footer = () => {
                   href="mailto:info@ambiencesalon.com"
                   className="text-beige-light/80 hover:text-beige-light transition-colors"
                 >
-                  info@ambiencesalon.com
+                  ambience.salon.spa2025@gmail.com
                 </a>
               </li>
             </ul>
