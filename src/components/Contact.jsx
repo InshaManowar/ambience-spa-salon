@@ -1,84 +1,29 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { PhoneIcon, EnvelopeIcon as MailIcon, CalendarIcon, UserIcon } from '@heroicons/react/24/outline';
-import { fetchCategories } from '../api/services';
-import emailjs from '@emailjs/browser';
-import { Toaster, toast } from 'react-hot-toast';
+import { PhoneIcon, EnvelopeIcon as MailIcon } from '@heroicons/react/24/outline';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    service: '',
-    date: '',
-    time: '',
-    message: ''
-  });
-
-  const [categories, setCategories] = useState([]);
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1
   });
 
   useEffect(() => {
-    const loadCategories = async () => {
-      const data = await fetchCategories();
-      setCategories(data);
+    // Load Calendly script
+    const script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      // Cleanup script when component unmounts
+      document.body.removeChild(script);
     };
-    loadCategories();
-
-    emailjs.init("vUM1kTvr9a3d3fYbi");
   }, []);
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    
-    try {
-      await emailjs.send(
-        "service_5068iu8",
-        "template_j4no50m",
-        {
-          to_name: "Sachi and Sandy",
-          from_name: formData.name,
-          from_email: formData.email,
-          from_phone: formData.phone,
-          service_requested: formData.service,
-          appointment_date: formData.date,
-          appointment_time: formData.time,
-          message: formData.message
-        }
-      );
-
-      toast.success('Thank you! Your booking request has been sent. We will contact you shortly.');
-      
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        service: '',
-        date: '',
-        time: '',
-        message: ''
-      });
-    } catch (error) {
-      console.error('Error sending email:', error);
-      toast.error('Failed to send message. Please try again.');
-    }
-  };
 
   return (
     <section id="contact" className="py-20 bg-gradient-to-b from-beige-light to-white relative overflow-hidden">
-      <Toaster position="top-center" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
@@ -89,137 +34,78 @@ const Contact = () => {
         >
           <h2 className="text-4xl md:text-5xl font-serif text-custom-black mb-6">Book Your Luxury Experience</h2>
           <p className="text-beige-dark max-w-2xl mx-auto">
-            Transform your look with our expert services. Complete the form below and our team will contact you to confirm your appointment.
+            Transform your look with our expert services. Schedule your appointment below or reach out to us directly.
           </p>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={inView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="max-w-4xl mx-auto bg-white/90 backdrop-blur-sm rounded-sm shadow-xl p-8 md:p-12 relative z-10"
-        >
-          <form onSubmit={handleSubmit} className="space-y-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-3 gap-8">
+          {/* Contact Information */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={inView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="md:col-span-1 space-y-8"
+          >
+            <div className="bg-white/90 backdrop-blur-sm rounded-sm shadow-xl p-8">
+              <h3 className="text-2xl font-serif text-custom-black mb-6">Get in Touch</h3>
+              
               <div className="space-y-6">
-                <div className="relative">
-                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <UserIcon className="h-5 w-5 text-beige-DEFAULT" />
+                <div className="flex items-center space-x-4">
+                  <PhoneIcon className="h-6 w-6 text-beige-DEFAULT" />
+                  <div>
+                    <p className="text-sm text-beige-dark">Call Us</p>
+                    <a href="tel:+1234567890" className="text-custom-black hover:text-beige-DEFAULT transition-colors">
+                      (123) 456-7890
+                    </a>
                   </div>
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    placeholder="Full Name"
-                    className="pl-10 w-full px-4 py-3 bg-beige-light/20 border border-beige-DEFAULT/20 rounded-sm focus:outline-none focus:ring-2 focus:ring-beige-DEFAULT focus:border-transparent transition-all duration-300"
-                  />
                 </div>
-
-                <div className="relative">
-                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <MailIcon className="h-5 w-5 text-beige-DEFAULT" />
+                
+                <div className="flex items-center space-x-4">
+                  <MailIcon className="h-6 w-6 text-beige-DEFAULT" />
+                  <div>
+                    <p className="text-sm text-beige-dark">Email Us</p>
+                    <a href="mailto:info@example.com" className="text-custom-black hover:text-beige-DEFAULT transition-colors">
+                      info@example.com
+                    </a>
                   </div>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    placeholder="Email Address"
-                    className="pl-10 w-full px-4 py-3 bg-beige-light/20 border border-beige-DEFAULT/20 rounded-sm focus:outline-none focus:ring-2 focus:ring-beige-DEFAULT focus:border-transparent transition-all duration-300"
-                  />
                 </div>
-
-                <div className="relative">
-                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <PhoneIcon className="h-5 w-5 text-beige-DEFAULT" />
-                  </div>
-                  <input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    required
-                    placeholder="Phone Number"
-                    className="pl-10 w-full px-4 py-3 bg-beige-light/20 border border-beige-DEFAULT/20 rounded-sm focus:outline-none focus:ring-2 focus:ring-beige-DEFAULT focus:border-transparent transition-all duration-300"
-                  />
-                </div>
-              </div>
-
-              <div className="space-y-6">
-                <select
-                  name="service"
-                  value={formData.service}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 bg-beige-light/20 border border-beige-DEFAULT/20 rounded-sm focus:outline-none focus:ring-2 focus:ring-beige-DEFAULT focus:border-transparent transition-all duration-300"
-                >
-                  <option value="">Select Service</option>
-                  {categories.map((category) => (
-                    <optgroup key={category.id} label={category.name}>
-                      {category.services.map((service, index) => (
-                        <option key={`${category.id}-${index}`} value={service.title}>
-                          {service.title}
-                        </option>
-                      ))}
-                    </optgroup>
-                  ))}
-                </select>
-
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="relative">
-                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                      <CalendarIcon className="h-5 w-5 text-beige-DEFAULT" />
-                    </div>
-                    <input
-                      type="date"
-                      name="date"
-                      value={formData.date}
-                      onChange={handleChange}
-                      required
-                      className="pl-10 w-full px-4 py-3 bg-beige-light/20 border border-beige-DEFAULT/20 rounded-sm focus:outline-none focus:ring-2 focus:ring-beige-DEFAULT focus:border-transparent transition-all duration-300"
-                    />
-                  </div>
-                  <select
-                    name="time"
-                    value={formData.time}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 bg-beige-light/20 border border-beige-DEFAULT/20 rounded-sm focus:outline-none focus:ring-2 focus:ring-beige-DEFAULT focus:border-transparent transition-all duration-300"
-                  >
-                    <option value="">Select Time</option>
-                    {Array.from({ length: 11 }, (_, i) => i + 9).map((hour) => (
-                      <React.Fragment key={hour}>
-                        <option value={`${hour}:00`}>{`${hour}:00 ${hour < 12 ? 'AM' : 'PM'}`}</option>
-                        <option value={`${hour}:30`}>{`${hour}:30 ${hour < 12 ? 'AM' : 'PM'}`}</option>
-                      </React.Fragment>
-                    ))}
-                  </select>
-                </div>
-
-                <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  placeholder="Special Requests or Notes"
-                  rows={4}
-                  className="w-full px-4 py-3 bg-beige-light/20 border border-beige-DEFAULT/20 rounded-sm focus:outline-none focus:ring-2 focus:ring-beige-DEFAULT focus:border-transparent transition-all duration-300"
-                />
               </div>
             </div>
 
-            <motion.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              type="submit"
-              className="w-full bg-beige text-custom-black hover:bg-beige-dark hover:text-beige-light transition-colors duration-300 text-lg font-medium py-4 rounded-sm"
-            >
-              Book Your Appointment
-            </motion.button>
-          </form>
-        </motion.div>
+            <div className="bg-white/90 backdrop-blur-sm rounded-sm shadow-xl p-8">
+              <h3 className="text-2xl font-serif text-custom-black mb-6">Business Hours</h3>
+              <div className="space-y-3">
+                <div className="flex justify-between">
+                  <span className="text-beige-dark">Monday - Friday</span>
+                  <span className="text-custom-black">9:00 AM - 7:00 PM</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-beige-dark">Saturday</span>
+                  <span className="text-custom-black">10:00 AM - 6:00 PM</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-beige-dark">Sunday</span>
+                  <span className="text-custom-black">Closed</span>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Calendly Integration */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={inView ? { opacity: 1 } : {}}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="md:col-span-2 bg-white/90 backdrop-blur-sm rounded-sm shadow-xl"
+          >
+            <div 
+              className="calendly-inline-widget" 
+              data-url="https://calendly.com/inshamanowar430/30min?primary_color=f50883"
+              style={{ minWidth: '320px', height: '300px' }}
+              data-resize="true"
+            />
+          </motion.div>
+        </div>
       </div>
     </section>
   );
