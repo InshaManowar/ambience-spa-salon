@@ -59,7 +59,12 @@ const Contact = () => {
         }
       );
 
-      toast.success('Thank you! Your booking request has been sent. We will contact you shortly.');
+      toast.success(
+        'Thank you! Your booking request has been sent. Please note that your selected appointment time is tentative and subject to availability. We will contact you shortly via phone or email to confirm or reschedule if needed.',
+        {
+          duration: 6000,
+        }
+      );
       
       setFormData({
         name: '',
@@ -90,6 +95,9 @@ const Contact = () => {
           <h2 className="text-4xl md:text-5xl font-serif text-custom-black mb-6">Book Your Luxury Experience</h2>
           <p className="text-beige-dark max-w-2xl mx-auto">
             Transform your look with our expert services. Complete the form below and our team will contact you to confirm your appointment.
+          </p>
+          <p className="text-beige-dark/80 max-w-2xl mx-auto mt-2 text-sm italic">
+            * Please note: All appointment times are tentative and subject to availability. We will contact you to confirm or reschedule if needed.
           </p>
         </motion.div>
 
