@@ -2,7 +2,7 @@
 export const heroImages = [
     {
         mobile: {
-          src: "https://i.ibb.co/sq9t9JB/6.png",
+          src: "https://i.ibb.co/3d7MV7x/7.png",
           alt: "Luxury Hair Styling"
         },
         desktop: {
@@ -12,7 +12,7 @@ export const heroImages = [
       },
       {
         mobile: {
-          src: "https://i.ibb.co/3d7MV7x/7.png",
+          src: "https://i.ibb.co/sq9t9JB/6.png",
           alt: "Salon Interior"
         },
         desktop: {
