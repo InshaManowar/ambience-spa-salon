@@ -2,21 +2,21 @@
 export const heroImages = [
     {
         mobile: {
-          src: "https://i.ibb.co/Y7d3TZ2/7.png",
+          src: "https://i.ibb.co/sq9t9JB/6.png",
           alt: "Luxury Hair Styling"
         },
         desktop: {
-          src: "https://i.ibb.co/RHbJFZY/1.png",
+          src: "https://i.ibb.co/VSWy69h/1.png",
           alt: "Luxury Hair Styling"
         }
       },
       {
         mobile: {
-          src: "https://i.ibb.co/chd538z/6.png",
+          src: "https://i.ibb.co/3d7MV7x/7.png",
           alt: "Salon Interior"
         },
         desktop: {
-          src: "https://i.ibb.co/6NHm8v8/4-1.png",
+          src: "https://i.ibb.co/pnYWqjd/4-2.png",
           alt: "Salon Interior"
         }
       },
@@ -42,21 +42,21 @@ export const heroImages = [
       },
       {
         mobile: {
-          src: "https://i.ibb.co/30LXFp3/2.png",
+          src: "https://i.ibb.co/L5mRVtb/1-3.png",
           alt: "men hair"
         },
         desktop: {
-          src: "https://i.ibb.co/30LXFp3/2.png",
+          src: "https://i.ibb.co/L5mRVtb/1-3.png",
           alt: "men hair"
         }
       },
       {
         mobile: {
-          src: "https://i.ibb.co/7X165XH/3-2.png",
+          src: "https://i.ibb.co/sqwM1Y7/3-2.png",
           alt: "men hair"
         },
         desktop: {
-          src: "https://i.ibb.co/7X165XH/3-2.png",
+          src: "https://i.ibb.co/sPT9tHQ/3-4.png",
           alt: "men hair"
         }
       }
