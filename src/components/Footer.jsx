@@ -1,25 +1,30 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MapPinIcon, PhoneIcon, EnvelopeIcon, ClockIcon } from '@heroicons/react/24/outline';
+import {
+  MapPinIcon,
+  PhoneIcon,
+  EnvelopeIcon,
+  ClockIcon,
+} from '@heroicons/react/24/outline';
 
 const Footer = () => {
   const handleLinkClick = () => {
-    // Smooth scroll to top for all navigation links
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // URLs
-  const mapUrl = "https://www.google.com/maps/place/540+S+Mendenhall+Rd+%238,+Memphis,+TN+38117,+USA";
-  const privacyPolicyUrl = "https://www.freeprivacypolicy.com/live/f7ad288c-19c2-4f14-80fa-a92643b5ada7";
+  const mapUrl = 'https://www.google.com/maps/place/540+S+Mendenhall+Rd+%238,+Memphis,+TN+38117,+USA';
+  const privacyPolicyUrl = 'https://www.freeprivacypolicy.com/live/f7ad288c-19c2-4f14-80fa-a92643b5ada7';
 
   return (
     <footer className="bg-custom-red text-beige-light relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          {/* Brand Section */}
           <div>
             <h3 className="text-3xl font-serif mb-6">AMBIENCE</h3>
             <p className="text-beige-light/80 mb-6">
-              Where luxury meets exceptional service. Experience the pinnacle of beauty and wellness.
+              Where luxury meets exceptional service. Experience the pinnacle of
+              beauty and wellness.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-beige-light/60 hover:text-beige-light transition-colors">
@@ -36,13 +41,14 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          
+
+          {/* Contact Info */}
           <div>
             <h4 className="text-xl font-serif mb-6">Contact Info</h4>
             <ul className="space-y-4">
               <li className="flex items-start">
                 <MapPinIcon className="h-6 w-6 text-beige-DEFAULT mr-3 flex-shrink-0" />
-                <a 
+                <a
                   href={mapUrl}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -54,8 +60,8 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <PhoneIcon className="h-5 w-5 text-beige-DEFAULT mr-3" />
-                <a 
-                  href="tel:5551234567" 
+                <a
+                  href="tel:5551234567"
                   className="text-beige-light/80 hover:text-beige-light transition-colors"
                 >
                   (555) 123-4567
@@ -63,16 +69,17 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <EnvelopeIcon className="h-5 w-5 text-beige-DEFAULT mr-3" />
-                <a 
-                  href="ambience.salon.spa2025@gmail.com"
+                <a
+                  href="mailto:info@ambiencesalon.com"
                   className="text-beige-light/80 hover:text-beige-light transition-colors"
                 >
-                  ambience.salon.spa2025@gmail.com
+                  info@ambiencesalon.com
                 </a>
               </li>
             </ul>
           </div>
-          
+
+          {/* Opening Hours */}
           <div>
             <h4 className="text-xl font-serif mb-6">Opening Hours</h4>
             <ul className="space-y-4">
@@ -86,13 +93,14 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          
+
+          {/* Quick Links */}
           <div>
             <h4 className="text-xl font-serif mb-6">Quick Links</h4>
             <ul className="space-y-3">
               <li>
-                <Link 
-                  to="/" 
+                <Link
+                  to="/"
                   className="text-beige-light/80 hover:text-beige-light transition-colors"
                   onClick={handleLinkClick}
                 >
@@ -100,8 +108,8 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link 
-                  to="/services" 
+                <Link
+                  to="/services"
                   className="text-beige-light/80 hover:text-beige-light transition-colors"
                   onClick={handleLinkClick}
                 >
@@ -109,8 +117,8 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link 
-                  to="/book" 
+                <Link
+                  to="/book"
                   className="text-beige-light/80 hover:text-beige-light transition-colors"
                   onClick={handleLinkClick}
                 >
@@ -118,7 +126,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <a 
+                <a
                   href={privacyPolicyUrl}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -130,10 +138,11 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        
+
         <div className="border-t border-beige-DEFAULT/20 mt-12 pt-8 text-center">
           <p className="text-beige-light/60">
-            &copy; {new Date().getFullYear()} Ambience Salon and Spa. All rights reserved.
+            &copy; {new Date().getFullYear()} Ambience Salon and Spa. All rights
+            reserved.
           </p>
         </div>
       </div>

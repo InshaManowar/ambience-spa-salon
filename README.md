@@ -140,6 +140,7 @@ VITE_FIREBASE_APP_ID=your_app_id
 3. Make changes and commit: `git commit -m 'Add feature'`
 4. Push to the branch: `git push origin feature-name`
 5. Submit a pull request
+6. Data Store - `https://console.firebase.google.com/project/ambience-salon/firestore/databases/-default-/data/~2F1~2FriTpeEiX4DPCP50bPOLl?fb_gclid=Cj0KCQiAsaS7BhDPARIsAAX5cSBHxnypS3pKOtedfnE30S5-p68__KhpY3UDOcscWEQEu_qrVSxggbQaAvJCEALw_wcB`
 
 ## 📝 License
 
