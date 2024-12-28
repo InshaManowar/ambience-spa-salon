@@ -44,40 +44,43 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-xl font-serif mb-6">Contact Info</h4>
-            <ul className="space-y-4">
-              <li className="flex items-start">
-                <MapPinIcon className="h-6 w-6 text-beige-DEFAULT mr-3 flex-shrink-0" />
-                <a
-                  href={mapUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-beige-light/80 hover:text-beige-light transition-colors"
-                >
-                  540 SOUTH MENDENHALL RD, #8<br />
-                  MEMPHIS, TN, 38117
-                </a>
-              </li>
-              <li className="flex items-center">
-                <PhoneIcon className="h-5 w-5 text-beige-DEFAULT mr-3" />
-                <a
-                  href="tel:5551234567"
-                  className="text-beige-light/80 hover:text-beige-light transition-colors"
-                >
-                  (555) 123-4567
-                </a>
-              </li>
-              <li className="flex items-center">
-                <EnvelopeIcon className="h-5 w-5 text-beige-DEFAULT mr-3" />
-                <a
-                  href="mailto:info@ambiencesalon.com"
-                  className="text-beige-light/80 hover:text-beige-light transition-colors"
-                >
-                  info@ambiencesalon.com
-                </a>
-              </li>
-            </ul>
-          </div>
+  <h4 className="text-xl font-serif mb-6">Contact Info</h4>
+  <address className="not-italic space-y-4">
+    <div className="flex items-start">
+      <MapPinIcon className="h-6 w-6 text-beige-DEFAULT mr-3 flex-shrink-0" />
+      <a
+        href={mapUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-beige-light/80 hover:text-beige-light transition-colors"
+      >
+        540 SOUTH MENDENHALL RD, #8<br />
+        MEMPHIS, TN, 38117
+      </a>
+    </div>
+    <div className="flex items-center">
+      <PhoneIcon className="h-5 w-5 text-beige-DEFAULT mr-3" />
+      <a
+        href="tel:5551234567"
+        className="text-beige-light/80 hover:text-beige-light transition-colors"
+      >
+        (555) 123-4567
+      </a>
+    </div>
+    <div className="flex items-center space-x-3">
+  <EnvelopeIcon className="h-5 w-5 text-beige-DEFAULT" />
+  <a 
+    href="mailto:ambience.salon.spa2025@gmail.com"
+    className="truncate max-w-full hover:text-beige-DEFAULT transition-colors duration-300"
+  >
+    ambience.salon.spa2025@gmail.com
+  </a>
+</div>
+
+
+  </address>
+</div>
+
 
           {/* Opening Hours */}
           <div>

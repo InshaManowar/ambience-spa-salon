@@ -142,7 +142,7 @@ const Services = () => {
 
         <div className="text-center mt-12">
           <Link
-            to="/services"
+            to="/book"
             className="inline-block px-8 py-3 bg-beige text-custom-black hover:bg-beige-dark hover:text-beige-light transition-colors duration-300 text-lg tracking-wider"
           >
             Book Now

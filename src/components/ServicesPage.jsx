@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { fetchCategories } from '../api/services';
 
 const ServicesPage = () => {
   const [categories, setCategories] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getCategories = async () => {
@@ -23,6 +24,12 @@ const ServicesPage = () => {
       }, 100);
     }
   }, []);
+
+  const handleBookNowClick = (e) => {
+    e.preventDefault();
+    window.scrollTo(0, 0);
+    navigate('/book');
+  };
 
   return (
     <div className="pt-24 bg-beige-light min-h-screen">
@@ -53,12 +60,12 @@ const ServicesPage = () => {
                 <h2 className="text-4xl font-serif text-beige-light mb-4 md:mb-0">
                   {category.name}
                 </h2>
-                <Link
-                  to="/book"
+                <button
+                  onClick={handleBookNowClick}
                   className="inline-flex items-center justify-center px-6 py-3 bg-beige text-custom-black hover:bg-beige-dark hover:text-beige-light transition-all duration-300 rounded-sm transform hover:scale-105 shadow-lg hover:shadow-xl w-full md:w-auto text-center"
                 >
                   Book Now
-                </Link>
+                </button>
               </div>
             </div>
 
