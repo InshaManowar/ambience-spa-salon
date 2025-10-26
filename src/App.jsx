@@ -4,6 +4,8 @@ import MainSite from './components/MainSite';
 import AdminPanel from './components/AdminPanel';
 import ServicesPage from './components/ServicesPage';
 import ContactPage from './components/ContactPage';
+import Contact from './components/Contact';
+import BookingWidget from './components/BookingWidget';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import BackToTop from './components/BackToTop';
@@ -42,10 +44,20 @@ function App() {
               <BackToTop />
             </>
           } />
-          <Route path="/book" element={
+          <Route path="/contact" element={
             <>
               <Navbar />
               <ContactPage />
+              <Footer />
+              <BackToTop />
+            </>
+          } />
+          <Route path="/book" element={
+            <>
+              <Navbar />
+              <div className="pt-24 bg-beige-light min-h-screen">
+                <BookingWidget />
+              </div>
               <Footer />
               <BackToTop />
             </>

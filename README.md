@@ -1,9 +1,9 @@
-# Ambience Salon & Spa Website
+Kilometre# Ambience Brow Lash and Hair Spa Website
 
-A modern, responsive website for Ambience Salon & Spa built with React, Tailwind CSS, and Vite.
+A modern, responsive website for Ambience Brow Lash and Hair Spa built with React, Tailwind CSS, and Vite.
 
 ## 🚀 Live Demo
-[Visit Ambience Salon & Spa](https://ambiencesalonandspa.com/)
+[Visit Ambience Brow Lash and Hair Spa](https://ambiencesalonandspa.com/)
 
 ## 📁 Project Structure
 
@@ -85,9 +85,8 @@ Update the opening hours in the `Footer.jsx` component:
 ```jsx
 // src/components/Footer.jsx
 <div className="text-beige-light/80">
-  <p>Mon - Fri: 9:00 AM - 8:00 PM</p>
-  <p>Saturday: 9:00 AM - 6:00 PM</p>
-  <p>Sunday: 10:00 AM - 5:00 PM</p>
+  <p>Mon - Sat: 10:00 AM - 7:00 PM</p>
+  <p>Sunday: 12:00 AM - 6:00 PM</p>
 </div>
 ```
 

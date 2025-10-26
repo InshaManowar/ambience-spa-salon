@@ -153,7 +153,7 @@ const AdminPanel = () => {
             />
             <button 
               type="submit"
-              className="w-full bg-beige-DEFAULT text-custom-black py-2 hover:bg-beige-dark transition-colors rounded-sm"
+              className="w-full bg-beige-DEFAULT text-custom-black py-2 hover:bg-beige-dark transition-colors rounded-lg"
             >
               Login
             </button>
@@ -171,14 +171,14 @@ const AdminPanel = () => {
           <div className="flex gap-4">
             <button
               onClick={handleAddCategory}
-              className="px-4 py-2 bg-beige-DEFAULT text-custom-black hover:bg-beige-dark transition-colors rounded-sm flex items-center gap-2"
+              className="px-4 py-2 bg-beige-DEFAULT text-custom-black hover:bg-beige-dark transition-colors rounded-lg flex items-center gap-2"
             >
               <Plus size={20} />
               Add Category
             </button>
             <Link 
               to="/"
-              className="px-4 py-2 bg-beige-DEFAULT text-custom-black hover:bg-beige-dark transition-colors rounded-sm"
+              className="px-4 py-2 bg-beige-DEFAULT text-custom-black hover:bg-beige-dark transition-colors rounded-lg"
             >
               Go to Website
             </Link>
@@ -217,7 +217,7 @@ const AdminPanel = () => {
                   <div className="flex gap-2">
                     <button
                       onClick={handleSaveCategory}
-                      className="bg-beige-DEFAULT text-custom-black px-4 py-2 rounded-sm hover:bg-beige-dark"
+                      className="bg-beige-DEFAULT text-custom-black px-4 py-2 rounded-lg hover:bg-beige-dark"
                     >
                       <Save size={20} />
                     </button>

@@ -64,12 +64,12 @@ const Hero = () => {
   className="w-32 md:w-48 mb-6 md:mb-8"
 />
 
-        <h1 className="text-4xl md:text-7xl font-serif text-beige-light mb-2 md:mb-4 tracking-wider">
-          AMBIENCE SALON AND SPA
+        <h1 className="text-3xl md:text-7xl font-serif text-beige-light mb-2 md:mb-4 tracking-wider">
+          AMBIENCE BROW LASH AND HAIR SPA
         </h1>
-        <h2 className="text-2xl md:text-5xl font-serif text-beige-light mb-4 md:mb-8">
+        {/* <h2 className="text-2xl md:text-5xl font-serif text-beige-light mb-4 md:mb-8">
           BROW • LASH • HAIR • HENNA
-        </h2>
+        </h2> */}
         <p className="text-lg md:text-xl text-beige-light/80 font-light tracking-widest">
         Inspired by You, Perfected by Us
         </p>

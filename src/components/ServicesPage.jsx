@@ -62,7 +62,7 @@ const ServicesPage = () => {
                 </h2>
                 <button
                   onClick={handleBookNowClick}
-                  className="inline-flex items-center justify-center px-6 py-3 bg-beige text-custom-black hover:bg-beige-dark hover:text-beige-light transition-all duration-300 rounded-sm transform hover:scale-105 shadow-lg hover:shadow-xl w-full md:w-auto text-center"
+                  className="inline-flex items-center justify-center px-6 py-3 bg-beige text-custom-black hover:bg-beige-dark hover:text-beige-light transition-all duration-300 rounded-lg transform hover:scale-105 shadow-lg hover:shadow-xl w-full md:w-auto text-center"
                 >
                   Book Now
                 </button>
@@ -80,9 +80,6 @@ const ServicesPage = () => {
                       <h3 className="text-lg font-serif text-custom-black mb-1">
                         {service.title}
                       </h3>
-                      <p className="text-gray-600 text-sm">
-                        {service.description}
-                      </p>
                     </div>
                     <p className="text-navy-DEFAULT font-semibold whitespace-nowrap ml-4">
                       {service.price}
