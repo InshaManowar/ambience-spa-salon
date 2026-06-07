@@ -47,10 +47,12 @@ const BookingWidget = () => {
     const container = document.createElement('div');
     container.id = 'externalBookingPluginContainer';
     container.style.position = 'relative';
-    container.style.overflow = 'hidden';
+    // overflow must NOT be hidden, otherwise the fixed-height frame clips the
+    // DaySmart form and there is no way to reach the date/time picker or submit.
+    container.style.overflow = 'auto';
+    container.style.WebkitOverflowScrolling = 'touch';
     container.style.maxWidth = `${width}px`;
     container.style.width = '100%';
-    if (height) container.style.minHeight = `${height}px`;
     container.className = 'rounded-xl ring-1 ring-beige-DEFAULT/20 shadow-xl bg-white';
     container.style.height = `${height}px`;
 
@@ -58,31 +60,26 @@ const BookingWidget = () => {
     iframe.id = 'externalBookingPlugin';
     iframe.src = src;
     iframe.style.width = '100%';
-    if (height) {
-      iframe.style.minHeight = `${height}px`;
-      iframe.style.height = `${height}px`;
-    }
+    iframe.style.height = `${height}px`;
+    iframe.style.display = 'block';
+    // DaySmart is a third-party cross-origin page, so iframe-resizer can't grow
+    // the frame to fit its content. Let the iframe scroll internally instead.
+    iframe.setAttribute('scrolling', 'yes');
     iframe.setAttribute('frameBorder', '0');
     iframe.style.border = '0';
 
     container.appendChild(iframe);
     host.appendChild(container);
 
-    const ensureResizer = () => new Promise((resolve) => {
-      if (window.iFrameResize) return resolve();
-      const s = document.createElement('script');
-      s.src = 'https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.11/iframeResizer.min.js';
-      s.async = true;
-      s.onload = () => resolve();
-      document.body.appendChild(s);
-    });
-
-    ensureResizer().then(() => {
-      if (window.iFrameResize) {
-        const isOldIE = (navigator && navigator.userAgent && navigator.userAgent.indexOf('MSIE') !== -1);
-        window.iFrameResize({ log: false, heightCalculationMethod: isOldIE ? 'max' : 'taggedElement', tolerance: 100, maxHeight: window.innerHeight, checkOrigin: false }, '#externalBookingPlugin');
-      }
-    });
+    // Keep the frame height in sync with the viewport so the whole form stays
+    // reachable when the window is resized.
+    const handleResize = () => {
+      const h = Math.max(window.innerHeight - 160, 600);
+      container.style.height = `${h}px`;
+      iframe.style.height = `${h}px`;
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, [inView]);
 
   return (
