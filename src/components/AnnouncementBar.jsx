@@ -24,7 +24,7 @@ const AnnouncementBar = () => {
           >
             {/* Mobile */}
             <span className="sm:hidden text-xs">
-              Limited Time Offer · <strong className="font-bold">30% Off</strong> till 4th July · <span className="font-semibold underline">Book Now →</span>
+              Limited Time Offer · Up to <strong className="font-bold">30% Off</strong> till 4th July · <span className="font-semibold underline">Book Now →</span>
             </span>
             {/* Desktop/tablet */}
             <span className="hidden sm:inline">
