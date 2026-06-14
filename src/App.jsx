@@ -7,6 +7,7 @@ import ContactPage from './components/ContactPage';
 import Contact from './components/Contact';
 import BookingWidget from './components/BookingWidget';
 import Navbar from './components/Navbar';
+import AnnouncementBar from './components/AnnouncementBar';
 import Footer from './components/Footer';
 import BackToTop from './components/BackToTop';
 import LoadingScreen from './components/LoadingScreen';
@@ -27,6 +28,7 @@ function App() {
     <>
       <LoadingScreen isLoading={isLoading} />
       <BrowserRouter>
+        <AnnouncementBar />
         <Routes>
           <Route path="/" element={
             <>
@@ -55,7 +57,7 @@ function App() {
           <Route path="/book" element={
             <>
               <Navbar />
-              <div className="pt-24 bg-beige-light min-h-screen">
+              <div className="pt-[136px] bg-beige-light min-h-screen">
                 <BookingWidget />
               </div>
               <Footer />

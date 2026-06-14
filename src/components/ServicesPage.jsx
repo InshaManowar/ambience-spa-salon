@@ -32,7 +32,7 @@ const ServicesPage = () => {
   };
 
   return (
-    <div className="pt-24 bg-beige-light min-h-screen">
+    <div className="pt-[136px] bg-beige-light min-h-screen">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="relative text-center mb-16">
           <h1 className="text-5xl font-serif text-custom-black relative z-10">

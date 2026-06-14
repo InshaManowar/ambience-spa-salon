@@ -50,7 +50,7 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="pt-24 bg-gradient-to-b from-beige-light via-white to-beige-light/30 min-h-screen">
+    <div className="pt-[136px] bg-gradient-to-b from-beige-light via-white to-beige-light/30 min-h-screen">
       {/* Hero Section */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}

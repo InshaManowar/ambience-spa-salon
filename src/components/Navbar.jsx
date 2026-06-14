@@ -79,7 +79,7 @@ const Navbar = () => {
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className={`fixed w-full z-50 transition-all duration-500 ${
+        className={`fixed top-10 w-full z-50 transition-all duration-500 ${
           isScrolled || location.pathname !== '/' ? 'bg-beige-light/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'
         }`}
       >
@@ -177,7 +177,7 @@ const Navbar = () => {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed right-0 top-24 bottom-0 w-72 bg-gradient-to-b from-beige-light to-white shadow-xl overflow-y-auto"
+              className="fixed right-0 top-[136px] bottom-0 w-72 bg-gradient-to-b from-beige-light to-white shadow-xl overflow-y-auto"
             >
               <div className="flex flex-col p-6">
                 <div className="border-b border-beige-DEFAULT/20 pb-6 mb-6">
