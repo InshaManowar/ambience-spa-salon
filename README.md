@@ -74,7 +74,7 @@ To update contact information, modify the `Footer.jsx` component:
 // Update address
 <a href="https://www.google.com/maps/place/...">
   540 SOUTH MENDENHALL RD, #8
-  MEMPHIS, TN, 3811
+  MEMPHIS, TN, 38117
 </a>
 ```
 
