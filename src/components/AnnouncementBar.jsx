@@ -12,19 +12,27 @@ const AnnouncementBar = () => {
   return (
     <button
       onClick={handleClick}
-      className="fixed top-0 left-0 w-full h-10 z-[60] flex items-center justify-center bg-[#e10a7f] text-white text-sm sm:text-base px-3"
+      aria-label="Limited time offer — up to 30% off, ends July 4th. Book now."
+      className="fixed top-0 left-0 w-full h-10 z-[60] flex items-center overflow-hidden bg-[#e10a7f] text-white text-sm sm:text-base"
     >
-      {/* Mobile: condensed so the full line + CTA fit on one row */}
-      <span className="sm:hidden text-xs whitespace-nowrap">
-        Limited Time Offer · <strong className="font-bold">30% Off</strong> · <span className="font-semibold underline">Book Now →</span>
-      </span>
-      {/* Desktop/tablet: full message (unchanged) */}
-      <span className="hidden sm:inline">
-        Limited Time Offer — Up to <strong className="font-bold">30% Off</strong> Select Services · Ends July 4th
-      </span>
-      <span className="ml-3 font-semibold underline whitespace-nowrap hidden sm:inline">
-        Book Now →
-      </span>
+      <div className="flex shrink-0 animate-marquee sm:hover:[animation-play-state:paused]">
+        {[0, 1].map((copy) => (
+          <span
+            key={copy}
+            aria-hidden={copy === 1}
+            className="flex w-screen shrink-0 items-center justify-center whitespace-nowrap px-4"
+          >
+            {/* Mobile */}
+            <span className="sm:hidden text-xs">
+              Limited Time Offer · <strong className="font-bold">30% Off</strong> till 4th July · <span className="font-semibold underline">Book Now →</span>
+            </span>
+            {/* Desktop/tablet */}
+            <span className="hidden sm:inline">
+              Limited Time Offer — Up to <strong className="font-bold">30% Off</strong> Select Services · Ends July 4th <span className="ml-3 font-semibold underline">Book Now →</span>
+            </span>
+          </span>
+        ))}
+      </div>
     </button>
   );
 };
