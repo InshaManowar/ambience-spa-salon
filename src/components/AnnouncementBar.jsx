@@ -16,7 +16,7 @@ const AnnouncementBar = () => {
     >
       {/* Mobile: condensed so the full line + CTA fit on one row */}
       <span className="sm:hidden text-xs whitespace-nowrap">
-        Up to <strong className="font-bold">30% Off</strong> · <span className="font-semibold underline">Book Now →</span>
+        Limited Time Offer · <strong className="font-bold">30% Off</strong> · <span className="font-semibold underline">Book Now →</span>
       </span>
       {/* Desktop/tablet: full message (unchanged) */}
       <span className="hidden sm:inline">
